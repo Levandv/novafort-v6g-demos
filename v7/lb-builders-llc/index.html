@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>LB Builders LLC | Website Concept</title>
+<meta name="description" content="Website concept for LB Builders LLC, a carpentry business in Myrtle Beach, South Carolina.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --navy:#0f2438; --navy-2:#16324c; --amber:#d98a1f; --amber-2:#f0a63a;
+    --ink:#182430; --muted:#5b6b7a; --paper:#f7f4ee; --white:#ffffff;
+    --line:#e3ddd2;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       line-height:1.65;color:var(--ink);background:var(--paper)}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  .demo-banner{background:#fff3cd;border-bottom:1px solid #e6c66a;color:#6b4b00;
+    font-size:.82rem;line-height:1.5;padding:10px 22px;text-align:center}
+  .demo-banner strong{letter-spacing:.04em}
+
+  header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20;
+    border-bottom:3px solid var(--amber)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;
+    min-height:68px;flex-wrap:wrap;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}
+  .brand-mark{width:38px;height:38px;border:2px solid var(--amber);border-radius:8px;
+    display:grid;place-items:center;font-size:.78rem;color:var(--amber-2)}
+  .nav a.navlink{text-decoration:none;font-size:.92rem;opacity:.9;padding:6px 2px}
+  .nav a.navlink:hover,.nav a.navlink:focus{opacity:1;color:var(--amber-2)}
+  .nav-links{display:flex;gap:20px;flex-wrap:wrap}
+
+  .hero{background:
+      radial-gradient(900px 380px at 85% -10%,rgba(217,138,31,.22),transparent 60%),
+      linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 65%,#1d3d5a 100%);
+    color:#fff;padding:76px 0 68px}
+  .hero .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--amber-2);border:1px solid rgba(240,166,58,.5);
+    border-radius:999px;padding:5px 14px;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.05rem,5.2vw,3.6rem);line-height:1.1;font-weight:800;
+    letter-spacing:-.02em;max-width:15ch}
+  .hero p.lead{margin-top:18px;font-size:clamp(1.02rem,2.2vw,1.22rem);
+    color:#dbe6f0;max-width:56ch}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:14px 26px;border-radius:9px;font-weight:700;text-decoration:none;
+    border:2px solid transparent;transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--amber);color:#1a1206}
+  .btn-primary:hover{background:var(--amber-2)}
+  .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+  .btn-ghost:hover{border-color:var(--amber-2);color:var(--amber-2)}
+  .hero-facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;
+    color:#c9d8e6;font-size:.9rem}
+  .hero-facts span{display:flex;align-items:center;gap:8px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--amber-2);flex:none}
+
+  section{padding:64px 0}
+  .section-head{max-width:640px;margin-bottom:38px}
+  .section-head .kicker{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--amber);font-weight:800}
+  h2{font-size:clamp(1.6rem,3.4vw,2.25rem);line-height:1.2;letter-spacing:-.01em;
+    margin-top:8px}
+  .section-head p{margin-top:12px;color:var(--muted)}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:26px 24px;box-shadow:0 1px 0 rgba(15,36,56,.03)}
+  .card .num{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--amber)}
+  .card h3{margin:10px 0 8px;font-size:1.12rem}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  .about{background:var(--white);border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:start}
+  .about p{color:var(--muted);margin-top:14px}
+  .fact-list{background:var(--paper);border:1px solid var(--line);border-radius:14px;
+    padding:22px 24px}
+  .fact-list h3{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:14px}
+  .fact{display:flex;justify-content:space-between;gap:16px;padding:10px 0;
+    border-bottom:1px dashed var(--line);font-size:.94rem}
+  .fact:last-child{border-bottom:0}
+  .fact span:first-child{color:var(--muted)}
+  .fact span:last-child{font-weight:600;text-align:right}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+  .step{background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:24px}
+  .step::before{counter-increment:step;content:"0" counter(step);
+    font-weight:800;color:var(--amber);font-size:.82rem;letter-spacing:.12em}
+  .step h3{margin:8px 0 6px;font-size:1.05rem}
+  .step p{color:var(--muted);font-size:.93rem}
+
+  .contact{background:
+      radial-gradient(700px 280px at 12% 0%,rgba(217,138,31,.18),transparent 60%),
+      var(--navy);color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .contact h2{color:#fff}
+  .contact .section-head p{color:#c9d8e6}
+  .contact-list{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  .contact-item{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 18px}
+  .contact-item .ico{width:34px;height:34px;border-radius:8px;background:rgba(240,166,58,.16);
+    color:var(--amber-2);display:grid;place-items:center;font-weight:800;flex:none}
+  .contact-item .label{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+    color:#a9bfd2}
+  .contact-item a,.contact-item strong{color:#fff;font-weight:700;text-decoration:none;
+    overflow-wrap:anywhere}
+  .contact-item a:hover{color:var(--amber-2)}
+  .card-note{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:18px 20px;color:#c9d8e6;font-size:.9rem}
+  .card-note strong{color:#fff}
+
+  footer{background:#0a1826;color:#9fb2c3;font-size:.85rem;padding:34px 0}
+  .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .foot a{color:#c9d8e6;text-decoration:none}
+  .foot a:hover{color:var(--amber-2)}
+
+  @media (max-width:860px){
+    .cards,.steps{grid-template-columns:1fr}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:26px}
+    .hero{padding:56px 0 50px}
+    .nav-links{display:none}
+    section{padding:48px 0}
+  }
+  @media (max-width:420px){
+    .hero-actions .btn{width:100%}
+    .hero-facts{gap:14px}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>DEMO / CONCEPT WEBSITE</strong> — A sales concept prepared by Novafort.
+  This is not the official website of LB Builders LLC, and no changes have been made
+  to any existing business listing.
+</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><div class="brand-mark">LB</div><span>LB Builders LLC</span></div>
+    <nav class="nav-links" aria-label="Concept navigation">
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink" href="#services">Carpentry</a>
+      <a class="navlink" href="#process">Process</a>
+      <a class="navlink" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Carpentry · Myrtle Beach, SC</span>
+    <h1>Carpentry built around your home.</h1>
+    <p class="lead">
+      LB Builders LLC is a carpentry business serving Myrtle Beach, South Carolina.
+      This concept shows how a clear, mobile-friendly website could present the business
+      and make it easy for local homeowners to get in touch.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="tel:+18434651522">Call (843) 465-1522</a>
+    </div>
+    <div class="hero-facts">
+      <span><i class="dot"></i>Myrtle Beach, South Carolina</span>
+      <span><i class="dot"></i>Carpentry</span>
+      <span><i class="dot"></i>Phone and email listed below</span>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="section-head">
+          <div class="kicker">About the business</div>
+          <h2>A local carpentry business, presented clearly.</h2>
+        </div>
+        <p>
+          LB Builders LLC is listed as a carpentry business in Myrtle Beach, South Carolina.
+          This concept focuses on the essentials: who the business is, the trade it works in,
+          and how to reach it.
+        </p>
+        <p>
+          Only publicly listed business details are used on this page. Service descriptions
+          are intentionally general and can be replaced with the owner's own wording.
+        </p>
+      </div>
+      <aside class="fact-list" aria-label="Verified business details">
+        <h3>Business details</h3>
+        <div class="fact"><span>Business</span><span>LB Builders LLC</span></div>
+        <div class="fact"><span>Trade</span><span>Carpentry</span></div>
+        <div class="fact"><span>Location</span><span>Myrtle Beach, SC</span></div>
+        <div class="fact"><span>Phone</span><span>(843) 465-1522</span></div>
+        <div class="fact"><span>Email</span><span style="overflow-wrap:anywhere">lbbuildersllc@yahoo.com</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Carpentry</div>
+      <h2>Simple, focused service sections.</h2>
+      <p>
+        The final site would list the exact work the business offers. The examples below
+        show the layout, not a claim of specific services.
+      </p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="num">01</div>
+        <h3>Custom carpentry</h3>
+        <p>A dedicated space for built-to-fit carpentry work and the details that set it apart.</p>
+      </article>
+      <article class="card">
+        <div class="num">02</div>
+        <h3>Residential projects</h3>
+        <p>A clear section for homeowner projects in and around Myrtle Beach.</p>
+      </article>
+      <article class="card">
+        <div class="num">03</div>
+        <h3>Finish and detail work</h3>
+        <p>A place to show the finishing touches that make carpentry work last.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">How it would work</div>
+      <h2>Three steps from first contact to a clear plan.</h2>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <h3>Start the conversation</h3>
+        <p>Call or email with a short description of the project.</p>
+      </article>
+      <article class="step">
+        <h3>Discuss the scope</h3>
+        <p>Talk through what is needed, the space, and the timing.</p>
+      </article>
+      <article class="step">
+        <h3>Plan the work</h3>
+        <p>Agree on the next step and schedule the carpentry work.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="section-head">
+          <div class="kicker">Contact</div>
+          <h2>Reach LB Builders LLC.</h2>
+          <p>These are the business contact details listed publicly for LB Builders LLC.</p>
+        </div>
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="ico" aria-hidden="true">☎</div>
+            <div>
+              <div class="label">Phone</div>
+              <a href="tel:+18434651522">(843) 465-1522</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ico" aria-hidden="true">✉</div>
+            <div>
+              <div class="label">Email</div>
+              <a href="mailto:lbbuildersllc@yahoo.com">lbbuildersllc@yahoo.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ico" aria-hidden="true">◎</div>
+            <div>
+              <div class="label">Service area</div>
+              <strong>Myrtle Beach, South Carolina</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-note">
+        <p><strong>About this concept.</strong></p>
+        <p style="margin-top:10px">
+          This page was created by Novafort as a design concept for LB Builders LLC.
+          It uses only the business name, trade, city and state, phone number and email
+          that are publicly listed. Nothing here is an offer, a price, or a claim about
+          the business beyond those details.
+        </p>
+        <p style="margin-top:10px">
+          If the direction fits, the finished website would be built with the owner's own
+          copy, photos and service list.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 LB Builders LLC — website concept by <a href="https://novafort.tech">Novafort</a>.</div>
+    <div>Concept only · Not the official website · <a href="#contact">Contact details</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
